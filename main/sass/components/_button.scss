@@ -1,0 +1,102 @@
+.btn{
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    transition: all 0.5s;
+    &:link,&:visited{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 2rem;                
+        padding: 2rem 2rem;
+        display: inline-block;
+        width: fit-content;
+    }
+    &:hover{
+        transform: translateY(-.5rem);
+        box-shadow: 0 1rem  2rem  $color-black;
+    }
+    &:active,&:focus{
+        transform: translateY(-.2rem);
+        box-shadow: 0 .5rem  2rem  $color-black;
+    }
+    &--normal{/* 
+        margin-top: 5rem;
+         */
+        font-size: 2rem;
+        border-radius: 10rem;
+        position: relative;
+    }
+    &--normal::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10rem;
+        z-index: -1;
+        transition: all .5s;
+    }
+    &--normal:hover:after{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    &--white{
+        background-color: $color-white;
+        color: $gray;
+        &::after{
+            background-color: $color-white;
+        }
+    }
+    &--green{
+        background-color: $Medium-green;
+        color: $color-white;
+        &::after{
+            background-color: $Medium-green;
+        }
+    }
+    &--animated{
+        animation: movetop .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+    &--green_bottom{
+        display: inline-block;
+        position: relative;
+        color: $Dark-green;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.6rem;
+        padding: .5rem;
+        border-bottom: .2rem solid $Dark-green;
+        transition: all .2s;
+        overflow: hidden;
+        backface-visibility: hidden;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -100%;
+            left: 0;
+            background-color: $Dark-green;
+            z-index: -1;
+            color: $color-white;
+            transition: all .3s;
+        }
+        &:hover{
+            color: $color-white;
+            transform: translateY(-.2rem);
+            box-shadow: .5rem 1rem 2rem rgba($color-black,.25);
+            &:after{
+                top: 0;
+                left: 0;
+            }
+        }
+        &:active{
+            transform: translateY(0);
+            box-shadow: .25rem .5rem 1rem rgba($color-black,.25);
+        }
+       
+    }
+}
+

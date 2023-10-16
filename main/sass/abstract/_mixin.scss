@@ -1,0 +1,39 @@
+//os em são usados para que, caso o usuario mude o font-size da tela, o media se adapte à mudança
+//os em e rem NAS @medias n são afetados pelo nosso codigo,e sim pela config padrão do browser
+//essa config é de 16px
+/* 
+breakpoints:
+cel--700
+tab-p--900
+tab--1200
+comp--1800
+
+
+*/
+@mixin respond($breakpoint){
+    @if($breakpoint==cel){
+        @media (max-width:39.5em) {//630
+            @content
+        };
+    }
+    /* @if($breakpoint==cel_g){
+        @media (max-width:43.5em) {//700
+            @content
+        };
+    } */
+    @if($breakpoint==tab_p){
+        @media (max-width:56.25em) {//900
+            @content
+        };
+    }
+    @if($breakpoint==tab){//1200
+        @media (max-width:75em) {
+            @content
+        };
+    }
+    @if($breakpoint==comp){
+        @media (min-width:112.5em) {
+            @content
+        };
+    }
+}

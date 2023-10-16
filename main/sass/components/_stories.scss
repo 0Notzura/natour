@@ -1,0 +1,66 @@
+.storie{
+    width: 60%;
+    min-width: 70rem;
+    margin: 0 auto 8rem auto;
+    background-color: rgba($color-white,.7);
+    padding: 5rem 5rem 6.5rem 8rem ;
+    font-size: 1.7rem;
+    color: $gray;
+    text-align: left;
+    transform: skewX(-12deg);
+    box-shadow:  0 3rem 6rem rgba($color-black, .1);
+    @include respond(cel){
+        min-width: 35rem;
+        transform: skewX(0);
+    }
+    &>*{
+        transform: skewX(12deg);
+        @include respond(cel){
+            transform: skewX(0);
+        }
+    }
+    &_figue{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        shape-outside: circle(50% at 50% 50%);
+        clip-path:circle(50% at 50% 50%) ;
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+        @include respond(cel){
+            float: none;
+            margin: auto;
+            transform: skewX(0);
+        }
+    }
+    &_img{
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s;
+    }
+    &_name{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,20%);
+        color: $color-white;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.7rem;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+    &:hover &_name{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+    &:hover &_img{
+        opacity: 1;
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(90%);
+    }
+}
+    
+
+

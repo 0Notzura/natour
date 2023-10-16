@@ -1,0 +1,27 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    font-size: 62.5%;
+    @include respond(tab){
+        font-size: 56.25% ;//9/16
+    }
+    @include respond(tab_p){
+        font-size: 45% ;//6.4/16
+    }
+    @include respond(cel){
+        font-size: 45% ;//6.4/16
+    }
+    @include respond(comp){
+        font-size:75% ;//12/16
+    }
+}
+body{
+    padding: 3rem;
+    @include respond(tab_p){
+        padding: 0;
+    }
+}
